@@ -3,11 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Hello, Odin!</h1>
+    <h1>My Library</h1>
+
+    <div id="library"></div>
+
+    <button id="book-form-button">New Book</button>
+    <dialog id="book-form-dialog">
+      <form method="dialog">
+        <input type="text" id="title" placeholder="Book Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="number" id="pages" placeholder="Number of Pages" required>
+        <label>
+          <input type="checkbox" id="isRead"> Read
+        </label>
+        <button type="submit">Add Book</button>
+      </form>
+    </dialog>
 
     <script src="javascript.js"></script>
   </body>
