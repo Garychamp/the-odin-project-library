@@ -19,3 +19,8 @@ bookFormButton.addEventListener ("click", () => {
   bookFormDialog.showModal();
 });
 
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
+const pagesInput = document.getElementById('pages');
+const isReadInput = document.getElementById('isRead');
+
