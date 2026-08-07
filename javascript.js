@@ -47,7 +47,10 @@ const isReadInput = document.getElementById('isRead');
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addBookToLibrary(titleInput.value, authorInput.value, Number(pagesInput.value), isReadInput.checked);
+  render();
   bookFormDialog.close();
   bookForm.reset();
 });
+
+render();
 
