@@ -16,6 +16,25 @@ const bookFormButton = document.getElementById("book-form-button");
 const bookFormDialog = document.getElementById("book-form-dialog");
 const bookForm = document.querySelector("form");
 
+const libraryContainer = document.getElementById('library');
+
+function render() {
+  libraryContainer.innerHTML = "";
+  myLibrary.forEach((book) => {
+    const titleEl = document.createElement('p');
+      titleEl.textContent = book.title;
+      libraryContainer.appendChild(titleEl);
+    const authorEl = document.createElement('p');
+      authorEl.textContent = book.author;
+      libraryContainer.appendChild(authorEl);
+    const pagesEl = document.createElement('p');
+      pagesEl.textContent = "Pages: " +book.pages;
+      libraryContainer.appendChild(pagesEl);
+    const isRead = document.createElement('p');
+      isRead.textContent = book.isRead ? "Read" : "Not Read";
+      libraryContainer.appendChild(isRead);
+})}
+
 bookFormButton.addEventListener("click", () => {
   bookFormDialog.showModal();
 });
