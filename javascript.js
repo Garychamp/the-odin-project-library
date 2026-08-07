@@ -16,7 +16,7 @@ const bookFormButton = document.getElementById("book-form-button");
 const bookFormDialog = document.getElementById("book-form-dialog");
 const bookForm = document.querySelector("form");
 
-bookFormButton.addEventListener ("click", () => {
+bookFormButton.addEventListener("click", () => {
   bookFormDialog.showModal();
 });
 
@@ -27,5 +27,8 @@ const isReadInput = document.getElementById('isRead');
 
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  addBookToLibrary(titleInput.value, authorInput.value, Number(pagesInput.value), isReadInput.checked);
+  bookFormDialog.close();
+  bookForm.reset();
 });
 
