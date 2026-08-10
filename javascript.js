@@ -6,7 +6,7 @@ function Book(title, author, pages, isRead) {
   this.id = crypto.randomUUID();
 }
 
-const myLibrary = [];
+let myLibrary = [];
 
 function addBookToLibrary(title, author, pages, isRead) {
   myLibrary.push(new Book(title, author, pages, isRead));
@@ -33,6 +33,23 @@ function render() {
     const isRead = document.createElement('p');
       isRead.textContent = book.isRead ? "Read" : "Not Read";
       libraryContainer.appendChild(isRead);
+    const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      libraryContainer.appendChild(removeBtn);
+     removeBtn.addEventListener("click", () => {
+    const bookId = book.id;
+      myLibrary = myLibrary.filter((b) => b.id !== bookId);
+    render();
+});
+    const toggleBtn = document.createElement("button");
+    toggleBtn.textContent = "Toggle Read";
+    libraryContainer.appendChild(toggleBtn);
+    toggleBtn.addEventListener("click", () => {
+    const bookId = book.id;
+    const foundBook = myLibrary.find((b) => b.id === bookId);
+      foundBook.isRead = !foundBook.isRead;
+  render();
+});
 })}
 
 bookFormButton.addEventListener("click", () => {
