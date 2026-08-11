@@ -9,19 +9,6 @@ A book library app built with vanilla JavaScript — add books, track read/unrea
 - Remove books from your collection
 - Simple, framework-free implementation using ES6 classes and DOM manipulation
 
-## Demo / Run locally
-
-1. Clone the repository:
-
-   git clone https://github.com/Garychamp/the-odin-project-library.git
-
-2. Open the project folder and either open `index.html` in your browser, or serve the folder with a static server (recommended for some browsers):
-
-   python -m http.server 8000
-   # then open http://localhost:8000
-
-No build step is required.
-
 ## Usage
 
 - Click the "New Book" (or Add Book) button to open the entry form.
