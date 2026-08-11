@@ -9,7 +9,6 @@ body {
 h1 {
   text-align: center;
   color: #333;
-  outline: red solid 2px;
 }
 .book-card {
   background-color: #fff;
