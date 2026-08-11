@@ -13,6 +13,7 @@ body {
   padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e0f7fa;
 }
 
 .book-card button {
@@ -23,9 +24,13 @@ body {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
   background-color: #5ea7f6;
+  font-weight: bold;
 }
 
 #library {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
 }
