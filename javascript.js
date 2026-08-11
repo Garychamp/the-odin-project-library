@@ -38,6 +38,7 @@ function render() {
     const removeBtn = document.createElement("button");
       removeBtn.textContent = "Remove";
       bookCard.appendChild(removeBtn);
+      removeBtn.classList.add("remove-btn");
      removeBtn.addEventListener("click", () => {
     const bookId = book.id;
       myLibrary = myLibrary.filter((b) => b.id !== bookId);
@@ -46,6 +47,7 @@ function render() {
     const toggleBtn = document.createElement("button");
     toggleBtn.textContent = "Toggle Read";
     bookCard.appendChild(toggleBtn);
+    toggleBtn.classList.add("toggle-btn");
     toggleBtn.addEventListener("click", () => {
     const bookId = book.id;
     const foundBook = myLibrary.find((b) => b.id === bookId);
