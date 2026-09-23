@@ -1,9 +1,15 @@
-function Book(title, author, pages, isRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-  this.id = crypto.randomUUID();
+class Book {
+  constructor(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+    this.id = crypto.randomUUID();
+  }
+
+  toggleRead() {
+    this.isRead = !this.isRead;
+  }
 }
 
 let myLibrary = [];
@@ -49,11 +55,9 @@ function render() {
     bookCard.appendChild(toggleBtn);
     toggleBtn.classList.add("toggle-btn");
     toggleBtn.addEventListener("click", () => {
-    const bookId = book.id;
-    const foundBook = myLibrary.find((b) => b.id === bookId);
-      foundBook.isRead = !foundBook.isRead;
-  render();
-});
+    book.toggleRead();
+    render();
+    });
 libraryContainer.appendChild(bookCard);
 })};
 
