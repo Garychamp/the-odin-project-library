@@ -12,11 +12,21 @@ class Book {
   }
 }
 
-let myLibrary = [];
+class Library {
+  constructor() {
+    this.books = [];
+  }
+   
+  addBook(title, author, pages, isRead) {
+    this.books.push(new Book(title, author, pages, isRead));
+  }
 
-function addBookToLibrary(title, author, pages, isRead) {
-  myLibrary.push(new Book(title, author, pages, isRead));
+  removeBook(id) {
+    this.books = this.books.filter((book) => book.id !== id);
+  }
 }
+
+const library = new Library();
 
 const bookFormButton = document.getElementById("book-form-button");
 const bookFormDialog = document.getElementById("book-form-dialog");
@@ -26,7 +36,7 @@ const libraryContainer = document.getElementById('library');
 
 function render() {
   libraryContainer.innerHTML = "";
-  myLibrary.forEach((book) => {
+  library.books.forEach((book) => {
     const bookCard = document.createElement ("div");
     bookCard.classList.add("book-card");
     const titleEl = document.createElement('p');
@@ -47,7 +57,7 @@ function render() {
       removeBtn.classList.add("remove-btn");
      removeBtn.addEventListener("click", () => {
     const bookId = book.id;
-      myLibrary = myLibrary.filter((b) => b.id !== bookId);
+      library.removeBook(bookId);
     render();
 });
     const toggleBtn = document.createElement("button");
@@ -72,7 +82,7 @@ const isReadInput = document.getElementById('isRead');
 
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addBookToLibrary(titleInput.value, authorInput.value, Number(pagesInput.value), isReadInput.checked);
+  library.addBook(titleInput.value, authorInput.value, Number(pagesInput.value), isReadInput.checked);
   render();
   bookFormDialog.close();
   bookForm.reset();
